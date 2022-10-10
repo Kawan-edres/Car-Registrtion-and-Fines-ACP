@@ -14,7 +14,7 @@ A Car Registration and Fines System , This System is created for minsitry of Tra
 | Government | Customor  |
 | Car Owners | End users  |
 |  Kawan Idrees| product engineers  |
-|  Bahez Maxdid | product engineers   |
+|  Bahez Maghdid | product engineers   |
 | Elaf Radha | product engineers  |
 |  Naly Moslih| product engineers  |
 |  Goran Safeen | product engineers   |
@@ -47,4 +47,19 @@ A Car Registration and Fines System , This System is created for minsitry of Tra
 ### The following Application is not-in scoope:
 - Website
 ------------
+## Requirments
+### Functional Requirments
+|  Requirment Id |Requirment Statement   | Must/Want  |Comments  |
+| ------------ | ------------ | ------------ | ------------ |
+|  FQ 01 | Check Elctronic Contract  |  Must  |  This Elctronic Cotract has to be exsist |
+|  FQ 02 | Check Car Safety Test  |  Must | n/a  |
+|  FQ 03|  Check National Id  |  Must |  Depends of car type  |
+|  FQ 04|  Check Car Type  |  Must | n/a  |
+|  FQ 05 |  Check Car Fines |  Want |  If the car is new no need it  |
+|  FQ 06 | Check  Environment & Road Fines  | Must  | n/a  |
+|  FQ 07|   Verify Plate Number  |  Must |  If plate number is new no need it |
+|  FQ 08|  Fill Elcronic Form of Transaction |  Must  |  n/a |
+
+------------
+
 
