@@ -20,3 +20,31 @@ A Car Registration and Fines System , This System is created for minsitry of Tra
 |  Goran Safeen | product engineers   |
 
 ------------
+
+## Goals
+1. Make Process esaier for citizines &  Government or company.
+2. serving the customer faster.
+3. Check  & Pay Car Fines.
+4. more Secure.
+5. need fewer employees.
+6.Renew Your Annual.
+
+------------
+
+
+## Business Processes Affected
+- New Member Sign Up
+- Member Sign In
+- Delete Account
+- Check & pay Car Fines
+- Renew Annual
+- Transaction
+------------
+## Applications
+### The following Application is in scoope:
+- Online System
+------------
+### The following Application is not-in scoope:
+- Website
+------------
+
