@@ -162,7 +162,6 @@ A Car Registration and Fines System , This System is created for minsitry of Tra
 ## Use-Case Diagram
 ![Alt text](https://js-bank-sit-nej8.vercel.app/img/acp.png "Use-Case Diagram")
 
-js-bank-sit-nej8.vercel.app
-Write to Java project
+
 
 
