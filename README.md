@@ -15,7 +15,7 @@ A Car Registration and Fines System , This System is created for minsitry of Tra
 |  Kawan Idrees| product engineers  |
 |  Bahez maghdid | product engineers   |
 | Elaf Radha | product engineers  |
-|  Naly Muslih| product engineers  |
+|  Naly Moslih| product engineers  |
 |  Goran Safeen | product engineers   |
 
 ------------
