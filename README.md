@@ -61,5 +61,20 @@ A Car Registration and Fines System , This System is created for minsitry of Tra
 |  FQ 08|  Fill Elcronic Form of Transaction |  Must  |  n/a |
 
 ------------
+### Non-Functional Requirments
+|  Requirment Id |Requirment Statement   | Must/Want  |Comments  |
+| ------------ | ------------ | ------------ | ------------ |
+|  NF 01 |  Secuirty | Must  |n/a |
+|  NF 02 |  Memory Optimazation | Must  |  n/a |
+|  NF 03|  Portable |  Must |n/a   |
+|  NF 04 |  Response and Process time |  Must | n/a  |
+|  NF 05 | Reliability   |  Must |  n/a  |
+|  NF 06 | Compatibility   | Must   |  n/a  |
+|  NF 07| Localization  |Must   |   n/a |
+|  NF 08|  Usability |  Must |   n/a |
+|  NF 09|  Throughput  |  Must |  n/a  |
+
+------------
+
 
 
