@@ -1,3 +1,4 @@
+import java.util.Date;
 
 public class RenewAnnual {
 
@@ -5,20 +6,20 @@ public class RenewAnnual {
     private String ownerFullName;
     private String ownerAddress;
     private String carModel;
-    // private String Vin;
+    private VIN_Number Vin; 
     private String carColor;
-    private String startDate;
-    private String endDate;
+    private Date startDate;
+    private Date endDate;
+    private Date vheicleSafetyEndDate;
+    private Date environmentFinesEndDate;
     private Integer vheicleChainNumber;//sequnece Number
-    private String vheicleSafetyEndDate;
-    private String environmentFinesEndDate;
 
     public RenewAnnual() {
     }
 
     public RenewAnnual(Integer vehicleNumber, String fullName, String address, String carModel,
-            String carColor, String startDate, String endDate, Integer vheicleChainNumber, String carSafetyEndDate,
-            String environmentFinesEndDate) {
+            String carColor, Date startDate, Date endDate, Integer vheicleChainNumber, Date carSafetyEndDate,
+            Date environmentFinesEndDate,VIN_Number vin) {
         this.vehiclePlateNumber = vehicleNumber;
         this.ownerFullName = fullName;
         this.ownerAddress = address;
@@ -30,6 +31,7 @@ public class RenewAnnual {
         this.vheicleChainNumber = vheicleChainNumber;
         this.vheicleSafetyEndDate = carSafetyEndDate;
         this.environmentFinesEndDate = environmentFinesEndDate;
+        this.Vin=vin;
     }
 
     public Integer getVehicleNumber() {
@@ -80,22 +82,6 @@ public class RenewAnnual {
         this.carColor = carColor;
     }
 
-    public String getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(String endDate) {
-        this.endDate = endDate;
-    }
-
     public Integer getVheicleChainNumber() {
         return vheicleChainNumber;
     }
@@ -104,20 +90,44 @@ public class RenewAnnual {
         this.vheicleChainNumber = vheicleChainNumber;
     }
 
-    public String getCarSafetyEndDate() {
+    
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public Date getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public Date getVheicleSafetyEndDate() {
         return vheicleSafetyEndDate;
     }
 
-    public void setCarSafetyEndDate(String carSafetyEndDate) {
-        this.vheicleSafetyEndDate = carSafetyEndDate;
+    public void setVheicleSafetyEndDate(Date vheicleSafetyEndDate) {
+        this.vheicleSafetyEndDate = vheicleSafetyEndDate;
     }
 
-    public String getEnvironmentFinesEndDate() {
+    public Date getEnvironmentFinesEndDate() {
         return environmentFinesEndDate;
     }
 
-    public void setEnvironmentFinesEndDate(String environmentFinesEndDate) {
+    public void setEnvironmentFinesEndDate(Date environmentFinesEndDate) {
         this.environmentFinesEndDate = environmentFinesEndDate;
+    }
+
+    
+
+    public VIN_Number getVin() {
+        return Vin;
     }
 
     @Override

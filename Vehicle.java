@@ -9,7 +9,7 @@ public class Vehicle {
 	private String ownerName;
 	private Integer plateNumber;
 	private String vehicleType;
-	// private String VIN;
+    private VIN_Number Vin; //does not has a setter 
 
 	public Vehicle() {
 	}
@@ -17,7 +17,7 @@ public class Vehicle {
 	
 
 	public Vehicle(String vehicleModelName, Integer vehicleYearModel, String annualNumber, String vehicleColor,
-			String annualId, String ownerName, Integer plateNumber,String vehicleType) {
+			String annualId, String ownerName, Integer plateNumber,String vehicleType,VIN_Number vin) {
 		this.vehicleModelName = vehicleModelName;
 		this.vehicleYearModel = vehicleYearModel;
 		this.annualNumber = annualNumber;
@@ -26,6 +26,7 @@ public class Vehicle {
 		this.ownerName = ownerName;
 		this.plateNumber = plateNumber;
 		this. vehicleType=vehicleType;
+		this.Vin=Vin;
 	}
 
 
@@ -104,6 +105,13 @@ public class Vehicle {
 	}
 
 	
+	
+	public VIN_Number getVin() {
+		return Vin;
+	}
+
+
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -165,15 +173,6 @@ public class Vehicle {
 				+ ", annualNumber=" + annualNumber + ", vehicleColor=" + vehicleColor + ", annualId=" + annualId
 				+ ", ownerName=" + ownerName + "]";
 	}
-
-	// public String getVIN() {
-	// return VIN;
-	// }
-
-	// public void setVIN(String VIN) {
-	// this.VIN = VIN;
-	// }
-	//
 
 
 	

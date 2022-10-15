@@ -6,8 +6,8 @@ public class Truck extends Vehicle {
 	public Truck() {}
 
 	public Truck(String vehicleModelName, Integer vehicleYearModel, String annualNumber, String vehicleColor,
-			String annualId, String ownerName, Integer plateNumber, Double truckTonWeight ) {
-		super(vehicleModelName, vehicleYearModel, annualNumber, vehicleColor, annualId, ownerName, plateNumber,"truck");
+			String annualId, String ownerName, Integer plateNumber, Double truckTonWeight,VIN_Number Vin ) {
+		super(vehicleModelName, vehicleYearModel, annualNumber, vehicleColor, annualId, ownerName, plateNumber,"truck",Vin);
 		this.truckTonWeight = truckTonWeight;
 	}
 
