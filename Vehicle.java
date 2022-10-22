@@ -1,123 +1,56 @@
 
+public class Truck extends Vehicle {
 
-public class Vehicle {
-    private  Integer vehicleId;
-    private String vehicleModelName;
-    private Integer vehicleYearModel;
-    private String annualNumber;
-    private String vehicleColor;
-    private String ownerName;
-    private Integer plateNumber;
-    private String vehicleType;
-    private String Vin;
 
-    public Vehicle(Integer vehicleId, String vehicleModelName, Integer vehicleYearModel, String annualNumber, String vehicleColor,
-                   String ownerName, Integer plateNumber, String vehicleType, String vin) {
-        this.vehicleId=vehicleId;
-        this.vehicleModelName = vehicleModelName;
-        this.vehicleYearModel = vehicleYearModel;
-        this.annualNumber = annualNumber;
-        this.vehicleColor = vehicleColor;
-        this.ownerName = ownerName;
-        this.plateNumber = plateNumber;
-        this.vehicleType = vehicleType;
-        this.Vin = vin;
+    private Double truckTonWeight;
+
+
+
+
+    public Truck(Integer vehicleId,String vehicleModelName, Integer vehicleYearModel, String annualNumber, String vehicleColor, String ownerName, Integer plateNumber, Double truckTonWeight,String Vin ) {
+        super(vehicleId,vehicleModelName, vehicleYearModel, annualNumber, vehicleColor, ownerName, plateNumber,"truck",Vin);
+        this.truckTonWeight = truckTonWeight;
     }
 
-
-    public String getVehicleModelName() {
-        return vehicleModelName;
+    public Double getTruckTonWeight() {
+        return truckTonWeight;
     }
 
-    public void setVehicleModelName(String vehicleModelName) {
-        this.vehicleModelName = vehicleModelName;
+    public void setTruckTonWeight(Double truckTonWeight) {
+        this.truckTonWeight = truckTonWeight;
     }
 
-    public Integer getVehicleYearModel() {
-        return vehicleYearModel;
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = super.hashCode();
+        result = prime * result + ((truckTonWeight == null) ? 0 : truckTonWeight.hashCode());
+        return result;
     }
 
-    public void setVehicleYearModel(Integer vehicleYearModel) {
-        this.vehicleYearModel = vehicleYearModel;
-    }
-
-    public String getAnnualNumber() {
-        return annualNumber;
-    }
-
-    public void setAnnualNumber(String annualNumber) {
-        this.annualNumber = annualNumber;
-    }
-
-    public String getVehicleColor() {
-        return vehicleColor;
-    }
-
-    public void setVehicleColor(String vehicleColor) {
-        this.vehicleColor = vehicleColor;
-    }
-
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public Integer getPlateNumber() {
-        return plateNumber;
-    }
-
-    public void setPlateNumber(Integer plateNumber) {
-        this.plateNumber = plateNumber;
-    }
-
-    public String getVehicleType() {
-        return vehicleType;
-    }
-
-    public void setVehicleType(String vehicleType) {
-        this.vehicleType = vehicleType;
-    }
-
-    public String getVin() {
-        return Vin;
-    }
-
-    public void setVin(String vin) {
-        Vin = vin;
-    }
-
-
-    public boolean equals(Vehicle v) {
-        if (this.annualNumber.equals(v.annualNumber) &&
-                this.vehicleModelName.equals(v.vehicleModelName)
-                && this.vehicleType.equals(v.vehicleType) &&
-                this.vehicleColor.equals(v.vehicleColor) &&
-                this.ownerName.equals(v.ownerName)) {
-            return  true;
-
-        }
-        return  false;
-
-
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (!super.equals(obj))
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Truck other = (Truck) obj;
+        if (truckTonWeight == null) {
+            if (other.truckTonWeight != null)
+                return false;
+        } else if (!truckTonWeight.equals(other.truckTonWeight))
+            return false;
+        return true;
     }
 
 
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "vehicleModelName='" + vehicleModelName + '\'' +
-                ", vehicleYearModel=" + vehicleYearModel +
-                ", annualNumber='" + annualNumber + '\'' +
-                ", vehicleColor='" + vehicleColor + '\'' +
-
-                ", ownerName='" + ownerName + '\'' +
-                ", plateNumber=" + plateNumber +
-                ", vehicleType='" + vehicleType + '\'' +
-                ", Vin='" + Vin + '\'' +
+        return  super.toString()+"Truck{" +
+                "truckTonWeight=" + truckTonWeight +
                 '}';
     }
 }
+
