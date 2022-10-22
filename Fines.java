@@ -1,15 +1,67 @@
+
 public class Fines {
     private String carType;
     private Integer carPlateNumber;
     private Integer annualNumber;
+    private String  finesHistoryDate;
+    private String typeOfTrafficViolation;
+    private Double amountOfTrafficViolationMoney;
+    private Integer totalNumberOfTrafficViolation;
+    private Double totalAmountOfTrafficViolationMoney;
 
-    public Fines() {
-    };
 
-    public Fines(String carType, Integer carPlateNumber, Integer annualNumber) {
+//    public Fines() {
+//    };
+
+    public Fines(String carType, Integer carPlateNumber, Integer annualNumber, String finesHistoryDate, String typeOfTrafficViolation, Double amountOfTrafficViolationMoney, Integer totalNumberOfTrafficViolation, Double totalAmountOfTrafficViolationMoney) {
         this.carType = carType;
         this.carPlateNumber = carPlateNumber;
         this.annualNumber = annualNumber;
+        this.finesHistoryDate = finesHistoryDate;
+        this.typeOfTrafficViolation = typeOfTrafficViolation;
+        this.amountOfTrafficViolationMoney = amountOfTrafficViolationMoney;
+        this.totalNumberOfTrafficViolation = totalNumberOfTrafficViolation;
+        this.totalAmountOfTrafficViolationMoney = totalAmountOfTrafficViolationMoney;
+    }
+
+    public String getFinesHistoryDate() {
+        return finesHistoryDate;
+    }
+
+    public void setFinesHistoryDate(String finesHistoryDate) {
+        this.finesHistoryDate = finesHistoryDate;
+    }
+
+    public String getTypeOfTrafficViolation() {
+        return typeOfTrafficViolation;
+    }
+
+    public void setTypeOfTrafficViolation(String typeOfTrafficViolation) {
+        this.typeOfTrafficViolation = typeOfTrafficViolation;
+    }
+
+    public Double getAmountOfTrafficViolationMoney() {
+        return amountOfTrafficViolationMoney;
+    }
+
+    public void setAmountOfTrafficViolationMoney(Double amountOfTrafficViolationMoney) {
+        this.amountOfTrafficViolationMoney = amountOfTrafficViolationMoney;
+    }
+
+    public Integer getTotalNumberOfTrafficViolation() {
+        return totalNumberOfTrafficViolation;
+    }
+
+    public void setTotalNumberOfTrafficViolation(Integer totalNumberOfTrafficViolation) {
+        this.totalNumberOfTrafficViolation = totalNumberOfTrafficViolation;
+    }
+
+    public Double getTotalAmountOfTrafficViolationMoney() {
+        return totalAmountOfTrafficViolationMoney;
+    }
+
+    public void setTotalAmountOfTrafficViolationMoney(Double totalAmountOfTrafficViolationMoney) {
+        this.totalAmountOfTrafficViolationMoney = totalAmountOfTrafficViolationMoney;
     }
 
     public String getCarType() {
@@ -46,37 +98,16 @@ public class Fines {
         return result;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Fines other = (Fines) obj;
-        if (carType == null) {
-            if (other.carType != null)
-                return false;
-        } else if (!carType.equals(other.carType))
-            return false;
-        if (carPlateNumber == null) {
-            if (other.carPlateNumber != null)
-                return false;
-        } else if (!carPlateNumber.equals(other.carPlateNumber))
-            return false;
-        if (annualNumber == null) {
-            if (other.annualNumber != null)
-                return false;
-        } else if (!annualNumber.equals(other.annualNumber))
-            return false;
-        return true;
-    }
+
 
     @Override
     public String toString() {
         return "Fines [carType=" + carType + ", carPlateNumber=" + carPlateNumber + ", annualNumber=" + annualNumber
-                + "]";
+                + ", finesHistoryDate=" + finesHistoryDate + ", typeOfTrafficViolation=" + typeOfTrafficViolation
+                + ", amountOfTrafficViolationMoney=" + amountOfTrafficViolationMoney
+                + ", totalNumberOfTrafficViolation=" + totalNumberOfTrafficViolation
+                + ", totalAmountOfTrafficViolationMoney=" + totalAmountOfTrafficViolationMoney + "]";
     }
 
 }
+
