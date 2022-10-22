@@ -1,4 +1,3 @@
-import java.util.Date;
 
 public class RenewAnnual {
 
@@ -6,10 +5,10 @@ public class RenewAnnual {
     private String ownerFullName;
     private String ownerAddress;
     private String carModel;
-    private VIN_Number Vin; 
+    private String Vin; 
     private String carColor;
-    private Date startDate;
-    private Date endDate;
+    private String  startDate;
+    private String endDate;
     private Date vheicleSafetyEndDate;
     private Date environmentFinesEndDate;
     private Integer vheicleChainNumber;//sequnece Number
@@ -18,8 +17,8 @@ public class RenewAnnual {
     }
 
     public RenewAnnual(Integer vehicleNumber, String fullName, String address, String carModel,
-            String carColor, Date startDate, Date endDate, Integer vheicleChainNumber, Date carSafetyEndDate,
-            Date environmentFinesEndDate,VIN_Number vin) {
+            String carColor, String startDate, String endDate, Integer vheicleChainNumber, Date carSafetyEndDate,
+            Date environmentFinesEndDate,String vin) {
         this.vehiclePlateNumber = vehicleNumber;
         this.ownerFullName = fullName;
         this.ownerAddress = address;
@@ -92,19 +91,19 @@ public class RenewAnnual {
 
     
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -126,33 +125,18 @@ public class RenewAnnual {
 
     
 
-    public VIN_Number getVin() {
+    public String getVin() {
         return Vin;
     }
 
-    @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((vehiclePlateNumber == null) ? 0 : vehiclePlateNumber.hashCode());
-        result = prime * result + ((ownerFullName == null) ? 0 : ownerFullName.hashCode());
-        result = prime * result + ((ownerAddress == null) ? 0 : ownerAddress.hashCode());
-        result = prime * result + ((carModel == null) ? 0 : carModel.hashCode());
-        result = prime * result + ((carColor == null) ? 0 : carColor.hashCode());
-        result = prime * result + ((startDate == null) ? 0 : startDate.hashCode());
-        result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
-        result = prime * result + ((vheicleChainNumber == null) ? 0 : vheicleChainNumber.hashCode());
-        result = prime * result + ((vheicleSafetyEndDate == null) ? 0 : vheicleSafetyEndDate.hashCode());
-        result = prime * result + ((environmentFinesEndDate == null) ? 0 : environmentFinesEndDate.hashCode());
-        return result;
-    }
+   
 
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
             return true;
         if (obj == null)
-            return false;
+            return false;   
         if (getClass() != obj.getClass())
             return false;
         RenewAnnual other = (RenewAnnual) obj;
@@ -223,6 +207,3 @@ public class RenewAnnual {
     
  
 }
- 
-
-
