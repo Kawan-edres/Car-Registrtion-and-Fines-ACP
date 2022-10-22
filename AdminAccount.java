@@ -1,10 +1,9 @@
-
-import java.util.Objects;
 import java.util.Scanner;
 
 public class AdminAccount {
+    
     static Scanner scan= new Scanner(System.in);
-    static String staticEmail="kawan@gmail.com";
+    static String staticEmail="admin@gmail.com";
     static String staticPassword="12345";
 
 
@@ -18,7 +17,7 @@ public class AdminAccount {
         this.passwordd=password;
     }
 
-    public static   void Login(){
+    public static void Login(){
         System.out.print("enter yout email :");
         String emailInput =scan.next();
         System.out.print("enter your password :");
