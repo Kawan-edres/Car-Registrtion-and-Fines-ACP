@@ -1,14 +1,14 @@
+
 public class PrivateCar extends Vehicle {
 
-    public PrivateCar() {
+
+    public PrivateCar(Integer vehicleId, String vehicleModelName, Integer vehicleYearModel, String annualNumber, String vehicleColor,
+                      String ownerName, Integer plateNumber, String Vin) {
+        super(vehicleId, vehicleModelName, vehicleYearModel, annualNumber, vehicleColor, ownerName, plateNumber,
+                "private", Vin);
+
     }
 
-    public PrivateCar(String vehicleModelName, Integer vehicleYearModel, String annualNumber, String vehicleColor,
-            String annualId, String ownerName, Integer plateNumber, String vehicleType ,VIN_Number Vin) {
-        super(vehicleModelName, vehicleYearModel, annualNumber, vehicleColor, annualId, ownerName, plateNumber,
-                "private",Vin);
-    }
-
-    
 
 }
+
