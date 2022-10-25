@@ -207,6 +207,7 @@ static void dsiplayRegisteredFines(){
         in.close();
         finesFromFile.stream().
                forEach(p-> System.out.println(p));
+               System.out.println("sucess");
     }catch (Exception e) {
         e.printStackTrace();
     }

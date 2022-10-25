@@ -1,5 +1,4 @@
 
-
 public class Vehicle {
     private  Integer vehicleId;
     private String vehicleModelName;

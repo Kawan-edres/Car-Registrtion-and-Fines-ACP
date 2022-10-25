@@ -1,6 +1,8 @@
 import java.io.Serializable;
 
 public class Fines  implements Serializable{
+
+
     private String carType;
     private Integer carPlateNumber;
     private String annualNumber;
@@ -111,4 +113,3 @@ public class Fines  implements Serializable{
     }
 
 }
-

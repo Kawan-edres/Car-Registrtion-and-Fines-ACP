@@ -1,4 +1,3 @@
-import java.util.Date;
 
 public class RenewAnnual {
 
@@ -10,16 +9,16 @@ public class RenewAnnual {
     private String carColor;
     private String  startDate;
     private String endDate;
-    private Date vheicleSafetyEndDate;
-    private Date environmentFinesEndDate;
+    private String vheicleSafetyEndDate;
+    private String environmentFinesEndDate;
     private Integer vheicleChainNumber;//sequnece Number
 
     public RenewAnnual() {
     }
 
     public RenewAnnual(Integer vehicleNumber, String fullName, String address, String carModel,
-            String carColor, String startDate, String endDate, Integer vheicleChainNumber, Date carSafetyEndDate,
-            Date environmentFinesEndDate,String vin) {
+            String carColor, String startDate, String endDate, Integer vheicleChainNumber, String carSafetyEndDate,
+            String environmentFinesEndDate,String vin) {
         this.vehiclePlateNumber = vehicleNumber;
         this.ownerFullName = fullName;
         this.ownerAddress = address;
@@ -108,19 +107,19 @@ public class RenewAnnual {
         this.endDate = endDate;
     }
 
-    public Date getVheicleSafetyEndDate() {
+    public String getVheicleSafetyEndDate() {
         return vheicleSafetyEndDate;
     }
 
-    public void setVheicleSafetyEndDate(Date vheicleSafetyEndDate) {
+    public void setVheicleSafetyEndDate(String vheicleSafetyEndDate) {
         this.vheicleSafetyEndDate = vheicleSafetyEndDate;
     }
 
-    public Date getEnvironmentFinesEndDate() {
+    public String getEnvironmentFinesEndDate() {
         return environmentFinesEndDate;
     }
 
-    public void setEnvironmentFinesEndDate(Date environmentFinesEndDate) {
+    public void setEnvironmentFinesEndDate(String environmentFinesEndDate) {
         this.environmentFinesEndDate = environmentFinesEndDate;
     }
 
@@ -208,6 +207,3 @@ public class RenewAnnual {
     
  
 }
- 
-
-

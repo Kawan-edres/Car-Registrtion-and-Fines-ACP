@@ -1,4 +1,3 @@
-
 public class Truck extends Vehicle {
 
 
@@ -46,11 +45,5 @@ public class Truck extends Vehicle {
     }
 
 
-    @Override
-    public String toString() {
-        return  super.toString()+"Truck{" +
-                "truckTonWeight=" + truckTonWeight +
-                '}';
-    }
 }
-
+       
