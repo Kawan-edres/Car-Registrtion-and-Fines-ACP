@@ -1,5 +1,4 @@
 
-import java.util.Objects;
 
 public class Vehicle {
     private  Integer vehicleId;

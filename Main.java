@@ -2,6 +2,8 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
+import java.io.*;
+
 
 public class Main {
 
@@ -68,9 +70,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-       Adminmenu();
-
+    //    Adminmenu();
         menu();
+        addFinesToFile();
 
       
 
@@ -157,9 +159,26 @@ static void addFines(){
     Double totalMoney=scan.nextDouble();
 
     fines.add(new Fines(type,plateNumber,annualNo,finesHistoryDate,typeOfTrafficViolation, amountOfTrafficViolationMoney,totalViolation,totalMoney));
+    
+   
 
 }
 
+static void addFinesToFile(){
+
+    try{
+        ObjectOutputStream outData= new ObjectOutputStream(new FileOutputStream("FinesData.txt"));
+        outData.writeObject(fines);
+        outData.flush();
+        outData.close();
+
+    }catch(IOException e){
+        e.printStackTrace();
+
+    }
+
+
+}
 static void displayRegisteredVhicles(char c){
 
     if(c=='1'){
@@ -178,7 +197,20 @@ static void displayRegisteredVhicles(char c){
 
 
 static void dsiplayRegisteredFines(){
-    fines.stream().forEach(p->System.out.println(p));
+
+    try{
+
+        ObjectInputStream in=new ObjectInputStream(new FileInputStream("FinesData.txt"));
+
+
+        ArrayList<Fines> finesFromFile = (ArrayList<Fines>) in.readObject();
+        in.close();
+        finesFromFile.stream().
+               forEach(p-> System.out.println(p));
+    }catch (Exception e) {
+        e.printStackTrace();
+    }
+
 
     
 

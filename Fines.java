@@ -1,8 +1,9 @@
+import java.io.Serializable;
 
-public class Fines {
+public class Fines  implements Serializable{
     private String carType;
     private Integer carPlateNumber;
-    private Integer annualNumber;
+    private String annualNumber;
     private String  finesHistoryDate;
     private String typeOfTrafficViolation;
     private Double amountOfTrafficViolationMoney;
@@ -13,7 +14,7 @@ public class Fines {
 //    public Fines() {
 //    };
 
-    public Fines(String carType, Integer carPlateNumber, Integer annualNumber, String finesHistoryDate, String typeOfTrafficViolation, Double amountOfTrafficViolationMoney, Integer totalNumberOfTrafficViolation, Double totalAmountOfTrafficViolationMoney) {
+    public Fines(String carType, Integer carPlateNumber, String annualNumber, String finesHistoryDate, String typeOfTrafficViolation, Double amountOfTrafficViolationMoney, Integer totalNumberOfTrafficViolation, Double totalAmountOfTrafficViolationMoney) {
         this.carType = carType;
         this.carPlateNumber = carPlateNumber;
         this.annualNumber = annualNumber;
@@ -80,11 +81,11 @@ public class Fines {
         this.carPlateNumber = carPlateNumber;
     }
 
-    public Integer getAnnualNumber() {
+    public String getAnnualNumber() {
         return annualNumber;
     }
 
-    public void setAnnualNumber(Integer annualNumber) {
+    public void setAnnualNumber(String annualNumber) {
         this.annualNumber = annualNumber;
     }
 
