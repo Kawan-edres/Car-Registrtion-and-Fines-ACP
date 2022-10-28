@@ -73,12 +73,7 @@ public class Main {
     //    Adminmenu();
         menu();
         addFinesToFile();
-
-      
-
-
-
-    
+  
 }
 
 
@@ -221,7 +216,7 @@ public static void Adminmenu(){
 
 
     System.out.println("Welcome to the car registration System and fines");
-    System.out.println("enter one if you want to login : ->");
+    System.out.println("enter 1 if you want to login : ->");
     System.out.println("1-Login ");
     int option=scan.nextInt();
 
