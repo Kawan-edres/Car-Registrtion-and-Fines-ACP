@@ -1,0 +1,4 @@
+�� sr java.util.HashSet�D�����4  xpw   ?@     sr 
+PrivateCar���K�f��  xr Vehicle����[�\ 	L Vint Ljava/lang/String;L annualNumberq ~ L 	ownerNameq ~ L plateNumbert Ljava/lang/Integer;L vehicleColorq ~ L 	vehicleIdq ~ L vehicleModelNameq ~ L vehicleTypeq ~ L vehicleYearModelq ~ xpt 	1234sdfght 123wdfgt gorasr java.lang.Integer⠤���8 I valuexr java.lang.Number������  xp  �t redsq ~ 
+   t 2022t privatesq ~ 
+  �x
