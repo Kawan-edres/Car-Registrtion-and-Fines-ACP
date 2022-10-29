@@ -257,6 +257,50 @@ static void displayTruck(){
 
 
 }
+
+static void displayTransport(){
+
+        try{
+
+            ObjectInputStream in=new ObjectInputStream(new FileInputStream("transport.txt"));
+
+
+            Optional<HashSet<TransportCar>> checkNull = Optional.ofNullable((HashSet<TransportCar>)  in.readObject());
+
+
+            in.close();
+            checkNull.stream().
+                    forEach( System.out::println);
+            System.out.println("sucess");
+        }catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    static void displayPrivateCar(){
+
+        try{
+
+            ObjectInputStream in=new ObjectInputStream(new FileInputStream("privatecar.txt"));
+
+
+
+            Optional<HashSet<PrivateCar>> checkNull = Optional.ofNullable((HashSet<PrivateCar>) in.readObject());
+
+            in.close();
+            checkNull.stream().
+                    forEach( System.out::println);
+            System.out.println("sucess");
+        }catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 static void dsiplayRegisteredFines(){
 
     try{
