@@ -1,43 +1,52 @@
-
 import java.util.Scanner;
+import java.io.*;
 
 public class AdminAccount {
-    
-    static Scanner scan= new Scanner(System.in);
-    static String staticEmail="admin@gmail.com";
-    static String staticPassword="12345";
+
+    static Scanner scan = new Scanner(System.in);
 
 
-    //instance
-    private   String emaill;
+    // instance
+    private String emaill;
     private String passwordd;
 
-    public   AdminAccount( String email,String password){
+    public AdminAccount(String email, String password) {
 
-        this.emaill=email;
-        this.passwordd=password;
+        this.emaill = email;
+        this.passwordd = password;
     }
 
-    public static void Login(){
+    public static void Login() {
         System.out.print("enter yout email :");
-        String emailInput =scan.next();
+        String emailInput = scan.next();
         System.out.print("enter your password :");
-        String passwordInput =scan.next();
+        String passwordInput = scan.next();
 
-        String validEmail=emailInput.trim().toLowerCase();
+        String validEmail = emailInput.trim().toLowerCase();
 
+        try{
+            BufferedReader br= new BufferedReader(new FileReader("admin.txt"));
 
-        if(validEmail.contains("@") && validEmail.equals(staticEmail) && passwordInput.equals(staticPassword)){
-            System.out.println("you are loggd in ");
+            String line = br.readLine();//
 
+            while (line !=null){
+                if(validEmail.equals(line)){
 
+                    line=br.readLine(); //12345
+                    if(passwordInput.equals(line)){
+                        break;
+
+                    }
+                }
+                    else {
+                        System.out.println("email or passwor is not correct try again");
+                        Login();
+                    }
+            }
+        br.close();
+        }catch(IOException e){
+            e.printStackTrace();
         }
-        else{
-            System.out.println("email or passwor is not correct try again");
-            Login();
-        }
-
-
     }
 
     public String getEmail() {
@@ -55,10 +64,6 @@ public class AdminAccount {
     public void setPassword(String password) {
         this.passwordd = password;
     }
-
-
-
-
 
     @Override
     public String toString() {
