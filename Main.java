@@ -154,8 +154,8 @@ static void addFines(){
     Double totalMoney=scan.nextDouble();
 
     fines.add(new Fines(type,plateNumber,annualNo,finesHistoryDate,typeOfTrafficViolation, amountOfTrafficViolationMoney,totalViolation,totalMoney));
-    
-   
+
+    addFinesToFile();
 
 }
 
@@ -166,27 +166,13 @@ static void addFinesToFile(){
         outData.writeObject(fines);
         outData.flush();
         outData.close();
+        System.out.println("success");
 
     }catch(IOException e){
         e.printStackTrace();
 
     }
 
-
-}
-static void displayRegisteredVhicles(char c){
-
-    if(c=='1'){
-        t.stream().forEach(p-> System.out.println(p));
-    }
-    else if(c=='2'){
-        trans.stream().forEach(p-> System.out.println(p));
-
-    }
-    else if(c=='3'){
-        car.stream().forEach(p-> System.out.println(p));
-
-    }
 
 }
 
