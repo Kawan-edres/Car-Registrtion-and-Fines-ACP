@@ -206,7 +206,57 @@ static void addFinesToFile(){
 
 
     }
+static  void addnewTransportCarToFile(){
+    try{
+        ObjectOutputStream outData= new ObjectOutputStream(new FileOutputStream("transport.txt"));
+        outData.writeObject(trans);
+        outData.flush();
+        outData.close();
+        System.out.println("success");
 
+    }catch(IOException e){
+        e.printStackTrace();
+
+    }
+
+}
+static void displayTruck(){
+
+
+
+    try{
+
+        ObjectInputStream in=new ObjectInputStream(new FileInputStream("truck.txt"));
+
+
+
+
+        Optional<HashSet<Truck>> checkNull = Optional.ofNullable((HashSet<Truck>)  in.readObject());
+
+//        System.out.println(checkNull);
+        if(checkNull.isEmpty()){
+            System.out.println("file is empty ");
+        }
+        else{
+            checkNull.stream().
+                    forEach( System.out::println);
+        }
+
+
+        in.close();
+
+
+    }catch (IOException e) {
+        e.printStackTrace();
+    } catch (ClassNotFoundException e) {
+        throw new RuntimeException(e);
+    }catch (Exception e){
+        e.printStackTrace();
+
+    }
+
+
+}
 static void dsiplayRegisteredFines(){
 
     try{
