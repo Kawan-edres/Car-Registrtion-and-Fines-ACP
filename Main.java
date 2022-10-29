@@ -176,6 +176,36 @@ static void addFinesToFile(){
 
 }
 
+    static void addnewTruckToFile(){
+    try{
+        ObjectOutputStream outData= new ObjectOutputStream(new FileOutputStream("truck.txt"));
+        outData.writeObject(t);
+        outData.flush();
+        outData.close();
+        System.out.println("success");
+
+    }catch(IOException e){
+        e.printStackTrace();
+
+    }
+
+
+}
+    static void addNewPrivateCarToFile(){
+        try{
+            ObjectOutputStream outData= new ObjectOutputStream(new FileOutputStream("privatecar.txt"));
+            outData.writeObject(car);
+            outData.flush();
+            outData.close();
+            System.out.println("success");
+
+        }catch(IOException e){
+            e.printStackTrace();
+
+        }
+
+
+    }
 
 static void dsiplayRegisteredFines(){
 
