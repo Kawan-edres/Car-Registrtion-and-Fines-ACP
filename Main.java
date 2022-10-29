@@ -303,24 +303,24 @@ static void displayTransport(){
 
 static void dsiplayRegisteredFines(){
 
-    try{
+        try{
 
-        ObjectInputStream in=new ObjectInputStream(new FileInputStream("FinesData.txt"));
+            ObjectInputStream in=new ObjectInputStream(new FileInputStream("FinesData.txt"));
+
+            Optional<HashSet<Fines>> checkNull = Optional.ofNullable((HashSet<Fines>) in.readObject());
+            in.close();
+            checkNull.
+                    stream().
+                   forEach(p-> System.out.println(p));;
+                   System.out.println("sucess");
+        }catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
 
-        ArrayList<Fines> finesFromFile = (ArrayList<Fines>) in.readObject();
-        in.close();
-        finesFromFile.stream().
-               forEach(p-> System.out.println(p));
-               System.out.println("sucess");
-    }catch (Exception e) {
-        e.printStackTrace();
     }
-
-
-    
-
-}
 
 public static void Adminmenu(){
 
