@@ -49,7 +49,7 @@
 
                         break;
                     case '5':
-                        System.out.println("Display Registerd Car Fineses");
+                        System.out.println("Display Private Cars");
                         displayPrivateCar();
                         break;
                     case '6':
