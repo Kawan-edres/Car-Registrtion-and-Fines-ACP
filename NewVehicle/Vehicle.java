@@ -1,6 +1,8 @@
 package NewVehicle;
 
-public class Vehicle {
+import java.io.Serializable;
+
+public class Vehicle implements Serializable {
     private  Integer vehicleId;
     private String vehicleModelName;
     private Integer vehicleYearModel;
