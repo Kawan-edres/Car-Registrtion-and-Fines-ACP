@@ -1,3 +1,4 @@
+package NewVehicle;
 public class Truck extends Vehicle {
 
 
