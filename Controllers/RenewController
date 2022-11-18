@@ -105,3 +105,11 @@ static void readRenewAnnualFromFile() {
         renewAnnual.removeIf(p->p.getVehiclePlateNumber() == plateNumber );
         writeRenewAnnualToFile();
     }
+
+public static void search(int plateNumber,String type){
+        readRenewAnnualFromFile();
+        renewAnnual.stream().filter(p-> p.getVehiclePlateNumber()==plateNumber && p.getCarType().equals(type) ).forEach(p-> System.out.println(p));
+
+    }
+
+}
