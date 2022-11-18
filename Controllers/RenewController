@@ -81,3 +81,16 @@ static void writeRenewAnnualToFile() {
         }
 
     }
+static void readRenewAnnualFromFile() {
+        try {
+
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("renewAnnual.txt"));
+            renewAnnual = (HashSet<RenewAnnualModel>) in.readObject();
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
