@@ -3,7 +3,7 @@ package NewVehicle;
 import java.io.Serializable;
 
 public class Vehicle implements Serializable {
-    private  Integer vehicleId;
+    private Integer vehicleId;
     private String vehicleModelName;
     private Integer vehicleYearModel;
     private String annualNumber;
