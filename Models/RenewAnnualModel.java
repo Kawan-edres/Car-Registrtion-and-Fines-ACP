@@ -127,3 +127,33 @@ public class RenewAnnualModel implements Serializable {
     public void setVheicleChainNumber(Integer vheicleChainNumber) {
         this.vheicleChainNumber = vheicleChainNumber;
     }
+@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof RenewAnnualModel that)) return false;
+        return Objects.equals(getVehiclePlateNumber(), that.getVehiclePlateNumber()) && Objects.equals(getOwnerFullName(), that.getOwnerFullName()) && Objects.equals(getOwnerAddress(), that.getOwnerAddress()) && Objects.equals(getCarModel(), that.getCarModel()) && Objects.equals(getCarType(), that.getCarType()) && Objects.equals(getVin(), that.getVin()) && Objects.equals(getCarColor(), that.getCarColor()) && Objects.equals(getStartDate(), that.getStartDate()) && Objects.equals(getEndDate(), that.getEndDate()) && Objects.equals(getVheicleSafetyEndDate(), that.getVheicleSafetyEndDate()) && Objects.equals(getEnvironmentFinesEndDate(), that.getEnvironmentFinesEndDate()) && Objects.equals(getVheicleChainNumber(), that.getVheicleChainNumber());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getVehiclePlateNumber(), getOwnerFullName(), getOwnerAddress(), getCarModel(), getCarType(), getVin(), getCarColor(), getStartDate(), getEndDate(), getVheicleSafetyEndDate(), getEnvironmentFinesEndDate(), getVheicleChainNumber());
+    }
+
+    @Override
+    public String toString() {
+        return "Model{" +
+                "vehiclePlateNumber=" + vehiclePlateNumber +
+                ", ownerFullName='" + ownerFullName + '\'' +
+                ", ownerAddress='" + ownerAddress + '\'' +
+                ", carModel='" + carModel + '\'' +
+                ", carType='" + carType + '\'' +
+                ", Vin='" + Vin + '\'' +
+                ", carColor='" + carColor + '\'' +
+                ", startDate='" + startDate + '\'' +
+                ", endDate='" + endDate + '\'' +
+                ", vheicleSafetyEndDate='" + vheicleSafetyEndDate + '\'' +
+                ", environmentFinesEndDate='" + environmentFinesEndDate + '\'' +
+                ", vheicleChainNumber=" + vheicleChainNumber +
+                '}';
+    }
+}
