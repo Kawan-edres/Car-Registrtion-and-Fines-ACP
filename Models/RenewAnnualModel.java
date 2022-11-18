@@ -72,3 +72,58 @@ public class RenewAnnualModel implements Serializable {
     public void setCarType(String carType) {
         this.carType = carType;
     }
+    public String getVin() {
+        return Vin;
+    }
+
+    public void setVin(String vin) {
+        Vin = vin;
+    }
+
+    public String getCarColor() {
+        return carColor;
+    }
+
+    public void setCarColor(String carColor) {
+        this.carColor = carColor;
+    }
+
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getVheicleSafetyEndDate() {
+        return vheicleSafetyEndDate;
+    }
+
+    public void setVheicleSafetyEndDate(String vheicleSafetyEndDate) {
+        this.vheicleSafetyEndDate = vheicleSafetyEndDate;
+    }
+
+    public String getEnvironmentFinesEndDate() {
+        return environmentFinesEndDate;
+    }
+
+    public void setEnvironmentFinesEndDate(String environmentFinesEndDate) {
+        this.environmentFinesEndDate = environmentFinesEndDate;
+    }
+
+    public Integer getVheicleChainNumber() {
+        return vheicleChainNumber;
+    }
+
+    public void setVheicleChainNumber(Integer vheicleChainNumber) {
+        this.vheicleChainNumber = vheicleChainNumber;
+    }
