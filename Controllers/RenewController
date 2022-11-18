@@ -99,3 +99,9 @@ static void readRenewAnnualFromFile() {
         readRenewAnnualFromFile();
         renewAnnual.stream().forEach(System.out::println);
     }
+    
+    public static  void delete(int plateNumber){
+        readRenewAnnualFromFile();
+        renewAnnual.removeIf(p->p.getVehiclePlateNumber() == plateNumber );
+        writeRenewAnnualToFile();
+    }
