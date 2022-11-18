@@ -137,3 +137,39 @@ public class FinesModel implements Serializable {
     public void setTotalNumberOfTrafficViolation(Integer totalNumberOfTrafficViolation) {
         this.totalNumberOfTrafficViolation = totalNumberOfTrafficViolation;
     }
+    
+    public Double getTotalAmountOfTrafficViolationMoney() {
+        return totalAmountOfTrafficViolationMoney;
+    }
+
+    public void setTotalAmountOfTrafficViolationMoney(Double totalAmountOfTrafficViolationMoney) {
+        this.totalAmountOfTrafficViolationMoney = totalAmountOfTrafficViolationMoney;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof FinesModel model)) return false;
+        return Objects.equals(getCarType(), model.getCarType()) && Objects.equals(getCarPlateNumber(), model.getCarPlateNumber()) && Objects.equals(getAnnualNumber(), model.getAnnualNumber()) && Objects.equals(getFinesHistoryDate(), model.getFinesHistoryDate()) && Objects.equals(getTypeOfTrafficViolation(), model.getTypeOfTrafficViolation()) && Objects.equals(getAmountOfTrafficViolationMoney(), model.getAmountOfTrafficViolationMoney()) && Objects.equals(getTotalNumberOfTrafficViolation(), model.getTotalNumberOfTrafficViolation()) && Objects.equals(getTotalAmountOfTrafficViolationMoney(), model.getTotalAmountOfTrafficViolationMoney());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getCarType(), getCarPlateNumber(), getAnnualNumber(), getFinesHistoryDate(), getTypeOfTrafficViolation(), getAmountOfTrafficViolationMoney(), getTotalNumberOfTrafficViolation(), getTotalAmountOfTrafficViolationMoney());
+    }
+
+    @Override
+    public String toString() {
+        return "Model{" +
+                "carType='" + carType + '\'' +
+                ", carPlateNumber=" + carPlateNumber +
+                ", annualNumber='" + annualNumber + '\'' +
+                ", finesHistoryDate='" + finesHistoryDate + '\'' +
+                ", typeOfTrafficViolation='" + typeOfTrafficViolation + '\'' +
+                ", amountOfTrafficViolationMoney=" + amountOfTrafficViolationMoney +
+                ", totalNumberOfTrafficViolation=" + totalNumberOfTrafficViolation +
+                ", totalAmountOfTrafficViolationMoney=" + totalAmountOfTrafficViolationMoney +
+                '}';
+    }
+
+}
