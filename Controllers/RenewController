@@ -94,3 +94,8 @@ static void readRenewAnnualFromFile() {
         }
 
     }
+    
+    public static  void  print(){
+        readRenewAnnualFromFile();
+        renewAnnual.stream().forEach(System.out::println);
+    }
