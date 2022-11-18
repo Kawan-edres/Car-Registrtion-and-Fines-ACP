@@ -68,3 +68,16 @@ public class RenewController {
 
 
     }
+static void writeRenewAnnualToFile() {
+        try {
+            ObjectOutputStream outData = new ObjectOutputStream(new FileOutputStream("renewAnnual.txt"));
+            outData.writeObject(renewAnnual);
+            outData.flush();
+            outData.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+
+    }
