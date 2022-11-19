@@ -2,55 +2,60 @@ package Views;
 
 import Controllers.FinesController;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.Scanner;
 
 public class UserView {
 
 
-    static void menu() throws ParseException {
+    static void menu(PrintWriter out, BufferedReader in) throws ParseException, IOException {
         Scanner scan = new Scanner(System.in);
 
-        char c;
+        String c;
         do {
-            System.out.println("Welcome to the  Car Fines System ");
-            System.out.println("------------------------------------");
-            System.out.println("Choose What do you want :");
-            System.out.println("1-Search for spesfic Car");
-            System.out.println("2-Exit");
-            c = scan.next().charAt(0);
-
-
+            out.println("Welcome to the  Car Fines System ");
+            out.println("------------------------------------");
+            out.println("Choose What do you want :");
+            out.println("1-Search for spesfic Car");
+            out.println("2-Exit");
+            out.println("k");
+            c = in.readLine();
             switch (c) {
-                case '1':
-                    System.out.println("Search For Spesfic Car Fines");
-                    System.out.print("Enter Type of Vehechle: truck or transport or private ");
-                    String typeToSearch = scan.next();
+                case "1":
+                    out.println("Search For Spesfic Car Fines");
+                    out.println("Enter Type of Vehechle: truck or transport or private ");
+                    out.println("k");
+                    String typeToSearch = in.readLine();
 
                     boolean check = true;
                     while (check) {
                         if (!(typeToSearch.equals("truck") || typeToSearch.equals("private") || typeToSearch.equals("transport"))) {
-                            System.out.println("the type shuld be truck or private or transport");
-                            typeToSearch = scan.next();
+                            out.println("the type shuld be truck or private or transport");
+                            out.println("k");
+                            typeToSearch = in.readLine();
                         } else {
                             check = false;
                             break;
                         }
 
                     }
-                    System.out.print("Enter Plate Number of Vehechle: ");
-                    int plateNumberForSearch = scan.nextInt();
-                    FinesController.search(plateNumberForSearch, typeToSearch);
+                    out.println("Enter Plate Number of Vehechle: ");
+                    out.println("k");
+                    int plateNumberForSearch = Integer.parseInt(in.readLine());
+                    FinesController.search(out,plateNumberForSearch, typeToSearch);
                     break;
-                case '2':
-                    System.out.println("Exit...");
+                case "2":
+                    out.println("exit");
                 default:
-                    System.out.println("Choose on of the above options to start !");
+                    out.println("Choose on of the above options to start !");
                     break;
 
             }
 
-        } while (c != '2');
+        } while (c!="2") ;
 
 
     }
