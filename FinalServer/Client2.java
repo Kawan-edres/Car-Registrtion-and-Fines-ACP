@@ -31,3 +31,19 @@ public static void main(String[] args) throws IOException {
         BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));//scanner
         String userInput;
         System.out.println("connected");
+
+        while ((userInput = in.readLine()) !=   null) {
+
+            boolean isServerAskForInput = userInput.equals("k");
+            if (isServerAskForInput) {    // 1 if send then is ask for input from client
+                System.out.print("clint : ");
+                out.println(stdIn.readLine());
+            }
+            if(!isServerAskForInput)
+                System.out.println("-" + userInput);
+
+            if(userInput.equals("exit")){
+                System.exit(0);
+                break;
+            }
+        }
