@@ -24,3 +24,10 @@ public static void main(String[] args) throws IOException {
             System.out.println(e.getMessage());
             System.exit(1);
         }
+        
+        out = new PrintWriter(echoSocket.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));//conection
+
+        BufferedReader stdIn = new BufferedReader(new InputStreamReader(System.in));//scanner
+        String userInput;
+        System.out.println("connected");
