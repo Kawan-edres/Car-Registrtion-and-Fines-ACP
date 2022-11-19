@@ -136,13 +136,14 @@ public static void menu(PrintWriter out , BufferedReader in) throws IOException{
         c= Integer.parseInt(in.readLine());
        
        
-        switch (c){
+         switch (c){
             case 1 :
            v.addVhicle(out ,in);
-                break;
+                 break;
+               
             case  2 :
 
-               out.print("Display Enter the type of car ");
+               out.println("Display Enter the type of car ");
                out.println("k");
                 String type=in.readLine();
                 v.displayVehicle(type,out);
@@ -151,6 +152,7 @@ public static void menu(PrintWriter out , BufferedReader in) throws IOException{
                 case 3 :
                 v.displayAll(out);
                      break;
+               
                 case 4 :
                out.println("what is the type of car :");
                out.println("k");
