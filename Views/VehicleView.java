@@ -1,5 +1,8 @@
 
 package Views;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Scanner;
 import java.util.Set;
@@ -16,17 +19,19 @@ public class VehicleView implements Serializable {
    static Scanner scan =new Scanner(System.in);
 
 
-    public Vehicle addVhicle() {
+    public Vehicle addVhicle(PrintWriter out , BufferedReader in) throws IOException {
 
-        System.out.print("enter vehicleType: truck || transport || private ");
-        String type = scan.next();
+       out.println("enter vehicleType: truck || transport || private ");
+       out.println("k");
+        String type = in.readLine();
         boolean check=true;
         while (check){
 
 
             if(!(type.equals("truck") || type.equals("transport") || type.equals("private"))){
-                System.out.println("the type of car must be truck or transport or car");
-                type=scan.next();
+               out.println("the type of car must be truck or transport or car");
+               out.println("k");
+                type=in.readLine();
             }
             else {
                 check=false;
@@ -34,23 +39,30 @@ public class VehicleView implements Serializable {
             }
 
         }
-        System.out.print("enter vhicle model: ");
-        String model = scan.next();
-        System.out.print("enter vhicle Year: ");
+       out.println("enter vhicle model: ");
+       out.println("k");
+        String model = in.readLine();
+       out.println("enter vhicle Year: ");
+       out.println("k");
         Integer year = scan.nextInt();
-        System.out.print("enter annual Number:  ");
-        String annualNo = scan.next();
-        System.out.print("enter vhicle color: ");
-        String color = scan.next();
-        System.out.print("enter owner Name: ");
-        String owner = scan.next();
-        System.out.print("enter plate Number: ");
-        Integer plateNo = scan.nextInt();
+       out.println("enter annual Number:  ");
+       out.println("k");
+        String annualNo = in.readLine();
+       out.println("enter vhicle color: ");
+       out.println("k");
+        String color = in.readLine();
+       out.println("enter owner Name: ");
+       out.println("k");
+        String owner = in.readLine();
+       out.println("enter plate Number: ");
+       out.println("k");
+        Integer plateNo = in.read();
 
 
 
-        System.out.print("enter vin number: ");
-        String Vin = scan.next();
+       out.println("enter vin number: ");
+       out.println("k");
+        String Vin = in.readLine();
 
         if (type.equals("truck") ) {
 
@@ -80,28 +92,85 @@ public class VehicleView implements Serializable {
 
 /////////////////////////////////////////////////////
 
-    public void displayTruck(Set<Truck> truck){
+    public void displayTruck(Set<Truck> truck,PrintWriter out){
       
-        truck.stream().forEach(System.out::println);
+        truck.stream().forEach(out::println);
 
     }
 
 
 
 
-    public void displayTransport(Set<TransportCar> trans){
+    public void displayTransport(Set<TransportCar> trans,PrintWriter out){
 
         
-        trans.stream().forEach(System.out::println);
+        trans.stream().forEach(out::println);
     }
 
 
 
 
-   public void displayPrivateCar(Set<PrivateCar> privateCar){
+   public void displayPrivateCar(Set<PrivateCar> privateCar, PrintWriter out){
 
        
-       privateCar.stream().forEach(System.out::println);
+       privateCar.stream().forEach(out::println);
+}
+
+
+public static void menu(PrintWriter out , BufferedReader in) throws IOException{
+ 
+    VehicleControler v=new VehicleControler(new VehicleModule(), new VehicleView());
+
+    int c;
+    do{
+       out.println("Welcome to the  Car Fines System ");
+       out.println("------------------------------------");
+       out.println("Choose What do you want :");
+       out.println("1-Add Vehicle ");
+       out.println("2-display car");
+       out.println("3-Display All display all type of car ");
+       out.println("4-Search for spesfic Car");
+       out.println("5-Exit");
+       out.println("k");
+        c=in.read();
+
+
+        switch (c){
+            case 1 :
+           v.addVhicle(out ,in);
+                break;
+            case  2 :
+
+               out.print("Display Enter the type of car ");
+               out.println("k");
+                String type=in.readLine();
+                v.displayVehicle(type,out);
+                
+                break;
+                case 3 :
+                v.displayAll(out);
+                     break;
+                case 4 :
+               out.println("what is the type of car :");
+               out.println("k");
+                String Type=in.readLine();
+               out.println("Enter the annual number of the vehicle:");
+               out.println("k");
+                String annual=in.readLine();
+
+                     v.serchForCar(annual, Type,out);
+                          break;
+                 case  5 :
+               out.println("Exit...");
+                 default:
+               out.println("Choose on of the above options to start !");
+                break;
+
+        }
+
+    }while (c!='5');
+
+}
 }
 
 
@@ -109,6 +178,3 @@ public class VehicleView implements Serializable {
 
 
 
-
-
-}

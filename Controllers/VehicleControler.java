@@ -1,5 +1,8 @@
 package Controllers;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.io.Serializable;
 
 import Models.VehicleModule;
@@ -18,16 +21,16 @@ public class VehicleControler implements Serializable {
 
 
 
-    public void addVhicle() {
+    public void addVhicle(PrintWriter out , BufferedReader in) throws IOException {
                                 
-        this.module.addVhicle(   this.view.addVhicle()   );
+        this.module.addVhicle(   this.view.addVhicle(out,in)   );
 
     }
 
 
 
 
-    public void displayVehicle(String Type) {
+    public void displayVehicle(String Type, PrintWriter out) {
 
         
 
@@ -36,59 +39,59 @@ public class VehicleControler implements Serializable {
 
            this.module.readTrukFromFile();
 
-             this.view.displayTruck(module.getT());
+             this.view.displayTruck(module.getT(),out);
 
         }
            
         else if (Type.equals("transport")){
             this.module.readTransportFromFile();
-             this.view.displayTransport(module.getTrans());
+             this.view.displayTransport(module.getTrans(),out);
         }
            
 
         else {
             this.module.readPrivateCarFromFile();
-             this.view.displayPrivateCar(module.getCar());
+             this.view.displayPrivateCar(module.getCar(),out);
         }
        
            
 
     }
 
-    public void displayAll(){
+    public void displayAll(PrintWriter out){
         // truck 
         this.module.readTrukFromFile();
 
-             this.view.displayTruck(module.getT());
+             this.view.displayTruck(module.getT(),out);
         // transport
         this.module.readTransportFromFile();
-             this.view.displayTransport(module.getTrans());
+             this.view.displayTransport(module.getTrans(), out);
         // private
         this.module.readPrivateCarFromFile();
-             this.view.displayPrivateCar(module.getCar());
+             this.view.displayPrivateCar(module.getCar(), out);
         
     }
 
-    public void serchForCar(String annual, String Type ){
+    public void serchForCar(String annual, String Type, PrintWriter out ){
 
         
         if (Type.equals("truck")){
 
 
             this.module.readTrukFromFile();
-            this.module.getT().stream().filter(p->p.getAnnualNumber().equals(annual)).forEach(System.out::println);
+            this.module.getT().stream().filter(p->p.getAnnualNumber().equals(annual)).forEach(out::println);
            
          }
             
          else if (Type.equals("transport")){
              this.module.readTransportFromFile();
-              this.module.getTrans().stream().filter(p->p.getAnnualNumber().equals(annual)).forEach(System.out::println);
+              this.module.getTrans().stream().filter(p->p.getAnnualNumber().equals(annual)).forEach(out::println);
          }
             
  
          else if(Type.equals("private")) {
              this.module.readPrivateCarFromFile();
-              this.module.getCar().stream().filter(p->p.getAnnualNumber().equals(annual)).forEach(System.out::println);
+              this.module.getCar().stream().filter(p->p.getAnnualNumber().equals(annual)).forEach(out::println);
          }
         
         

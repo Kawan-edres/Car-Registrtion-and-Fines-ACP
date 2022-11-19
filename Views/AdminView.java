@@ -37,6 +37,7 @@ public class AdminView{
                     break;
                 case "3":
                     out.println("New Car Registertion System");
+                    VehicleView.menu(out, in);
 
                     break;
                 case "4":
