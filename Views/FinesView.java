@@ -6,84 +6,86 @@ package Views;
 import Admin.AdminAccount;
 import Controllers.FinesController;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.Scanner;
 public class FinesView {
 
     static Scanner scan = new Scanner(System.in);
 
+    static void menu(PrintWriter out, BufferedReader in) throws ParseException, IOException {
 
-
-    public static void main(String[] args) throws ParseException {
-        AdminAccount.Login();
-        menu();
-    }
-
-    static void menu() throws ParseException {
-
-        char c;
+        String c;
         do {
-            System.out.println("Welcome to the  Car Fines System ");
-            System.out.println("------------------------------------");
-            System.out.println("Choose What do you want :");
-            System.out.println("1-Add Fines ");
-            System.out.println("2-Delete Fines");
-            System.out.println("3-Display All Fines ");
-            System.out.println("4-Search for spesfic Car");
-            System.out.println("5-Exit");
-            c = scan.next().charAt(0);
+            out.println("Welcome to the  Car Fines System ");
+            out.println("------------------------------------");
+            out.println("Choose What do you want :");
+            out.println("1-Add Fines ");
+            out.println("2-Delete Fines");
+            out.println("3-Display All Fines ");
+            out.println("4-Search for spesfic Car");
+            out.println("5-Exit");
+
+            out.println("k");
+            c = in.readLine();
 
 
             switch (c) {
-                case '1':
-                    FinesController.addFinesData();
+                case "1":
+                    FinesController.addFinesData(out,in);
                     break;
-                case '2':
+                case "2":
 
-                    System.out.println("Deleting a Fines ");
-                    System.out.print("Enter Type of Vehechle: ");
-                    String typeToDelete = scan.next();
-                    System.out.print("Enter Plate Number of Vehechle: ");
-                    int plateNumberToDelete = scan.nextInt();
-
+                    out.println("Deleting a Fines ");
+                    out.println("Enter Type of Vehechle: ");
+                    out.println("k");
+                    String typeToDelete = in.readLine();
+                    out.println("Enter Plate Number of Vehechle: ");
+                    out.println("k");
+                    int plateNumberToDelete = Integer.parseInt(in.readLine());
                     FinesController.deleteFines(plateNumberToDelete, typeToDelete);
-                    System.out.println("Deleted");
+                    out.println("Deleted");
                     break;
-                case '3':
-                    System.out.println("Display All Fines");
-                    FinesController.printFines();
+                case "3":
+                    out.println("Display All Fines");
+                    FinesController.printFines(out);
                     break;
 
 
-                case '4':
-                    System.out.println("Search For Spesfic Car Fines");
-                    System.out.print("Enter Type of Vehechle: ");
-                    String typeToSearch = scan.next();
+                case "4":
+                    out.println("Search For Spesfic Car Fines");
+                    out.println("Enter Type of Vehechle: ");
+                   out.println("k");
+                    String typeToSearch = in.readLine();
 
                     boolean check = true;
                     while (check) {
                         if (!(typeToSearch.equals("truck") || typeToSearch.equals("private") || typeToSearch.equals("transport"))) {
-                            System.out.println("the type shuld be truck or private or transport");
-                            typeToSearch = scan.next();
+                            out.println("the type shuld be truck or private or transport");
+                            out.println("k");
+                            typeToSearch = in.readLine();
                         } else {
                             check = false;
                             break;
                         }
 
                     }
-                    System.out.print("Enter Plate Number of Vehechle: ");
-                    int plateNumberForSearch = scan.nextInt();
-                    FinesController.search(plateNumberForSearch, typeToSearch);
+                    out.println("Enter Plate Number of Vehechle: ");
+                   out.println("k");
+                    int plateNumberForSearch = Integer.parseInt(in.readLine());
+                    FinesController.search(out,plateNumberForSearch, typeToSearch);
                     break;
-                case '5':
-                    System.out.println("Exit...");
+                case "5":
+                    out.println("exit");
                 default:
-                    System.out.println("Choose on of the above options to start !");
+                   out.println("Choose on of the above options to start !");
                     break;
 
             }
 
-        } while (c != '5');
+        } while (c != "5");
 
 
     }
