@@ -1,4 +1,4 @@
-package Vehicle;
+package Models;
 
 
 import java.io.FileInputStream;
@@ -90,7 +90,7 @@ public class VehicleModule implements Serializable {
     }
 
 
-     void readTrukFromFile() {
+     public void readTrukFromFile() {
         try {
 
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("Truck.txt"));
@@ -105,7 +105,7 @@ public class VehicleModule implements Serializable {
     }
 
 
-     void readTransportFromFile() {
+     public void readTransportFromFile() {
         try {
 
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("TransportCars.txt"));
@@ -121,7 +121,7 @@ public class VehicleModule implements Serializable {
 
 
 
-     void readPrivateCarFromFile() {
+     public void readPrivateCarFromFile() {
         try {
 
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("PrivateCars.txt"));

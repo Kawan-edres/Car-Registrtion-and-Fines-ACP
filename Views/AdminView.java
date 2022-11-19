@@ -1,6 +1,6 @@
 package Views;
 
-import Admin.AdminAccount;
+import Addmin.AdminAccount;
 import Controllers.FinesController;
 
 import java.io.BufferedReader;

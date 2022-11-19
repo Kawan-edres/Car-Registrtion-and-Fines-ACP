@@ -1,4 +1,4 @@
-package NewVehicle;
+package Models;
 
 import java.io.Serializable;
 

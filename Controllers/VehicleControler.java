@@ -1,6 +1,9 @@
-package Vehicle;
+package Controllers;
 
 import java.io.Serializable;
+
+import Models.VehicleModule;
+import Views.VehicleView;
 
 public class VehicleControler implements Serializable {
     VehicleModule module;

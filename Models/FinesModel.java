@@ -28,123 +28,86 @@ public class FinesModel implements Serializable {
         this.totalAmountOfTrafficViolationMoney = totalAmountOfTrafficViolationMoney;
     }
 
+
     public String getCarType() {
         return carType;
     }
 
-    public void setCarType(String carType) {
-        this.carType = carType;
-    }
-
-    public Integer getCarPlateNumber() {
-        return carPlateNumber;
-    }
-
-    public void setCarPlateNumber(Integer carPlateNumber) {
-        this.carPlateNumber = carPlateNumber;
-    }
-
-    public String getAnnualNumber() {
-        return annualNumber;
-    }
-
-    public void setAnnualNumber(String annualNumber) {
-        this.annualNumber = annualNumber;
-    }
-
-    public String getFinesHistoryDate() {
-        return finesHistoryDate;
-    }
-
-    public void setFinesHistoryDate(String finesHistoryDate) {
-        this.finesHistoryDate = finesHistoryDate;
-    }
-
-    public String getTypeOfTrafficViolation() {
-        return typeOfTrafficViolation;
-    }
-
-    public void setTypeOfTrafficViolation(String typeOfTrafficViolation) {
-        this.typeOfTrafficViolation = typeOfTrafficViolation;
-    }
-
-    public Double getAmountOfTrafficViolationMoney() {
-        return amountOfTrafficViolationMoney;
-    }
-
-    public void setAmountOfTrafficViolationMoney(Double amountOfTrafficViolationMoney) {
-        this.amountOfTrafficViolationMoney = amountOfTrafficViolationMoney;
-    }
-
-    public Integer getTotalNumberOfTrafficViolation() {
-        return totalNumberOfTrafficViolation;
-    }
-
-    public void setTotalNumberOfTrafficViolation(Integer totalNumberOfTrafficViolation) {
-        this.totalNumberOfTrafficViolation = totalNumberOfTrafficViolation;
-    }    public String getCarType() {
-        return carType;
-    }
 
     public void setCarType(String carType) {
         this.carType = carType;
     }
 
+
     public Integer getCarPlateNumber() {
         return carPlateNumber;
     }
+
 
     public void setCarPlateNumber(Integer carPlateNumber) {
         this.carPlateNumber = carPlateNumber;
     }
 
+
     public String getAnnualNumber() {
         return annualNumber;
     }
+
 
     public void setAnnualNumber(String annualNumber) {
         this.annualNumber = annualNumber;
     }
 
+
     public String getFinesHistoryDate() {
         return finesHistoryDate;
     }
+
 
     public void setFinesHistoryDate(String finesHistoryDate) {
         this.finesHistoryDate = finesHistoryDate;
     }
 
+
     public String getTypeOfTrafficViolation() {
         return typeOfTrafficViolation;
     }
+
 
     public void setTypeOfTrafficViolation(String typeOfTrafficViolation) {
         this.typeOfTrafficViolation = typeOfTrafficViolation;
     }
 
+
     public Double getAmountOfTrafficViolationMoney() {
         return amountOfTrafficViolationMoney;
     }
+
 
     public void setAmountOfTrafficViolationMoney(Double amountOfTrafficViolationMoney) {
         this.amountOfTrafficViolationMoney = amountOfTrafficViolationMoney;
     }
 
+
     public Integer getTotalNumberOfTrafficViolation() {
         return totalNumberOfTrafficViolation;
     }
 
+
     public void setTotalNumberOfTrafficViolation(Integer totalNumberOfTrafficViolation) {
         this.totalNumberOfTrafficViolation = totalNumberOfTrafficViolation;
     }
-    
+
+
     public Double getTotalAmountOfTrafficViolationMoney() {
         return totalAmountOfTrafficViolationMoney;
     }
 
+
     public void setTotalAmountOfTrafficViolationMoney(Double totalAmountOfTrafficViolationMoney) {
         this.totalAmountOfTrafficViolationMoney = totalAmountOfTrafficViolationMoney;
     }
+
 
     @Override
     public boolean equals(Object o) {
