@@ -77,10 +77,9 @@ public class VehicleControler implements Serializable {
         
     }
 
+public void serchForCar(String annual, String Type, PrintWriter out ){
 
-    public void serchForCar(String annual, String Type, PrintWriter out ){
-
-        
+        //check type vehicle
         if (Type.equals("truck")){
 
 
