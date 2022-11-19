@@ -164,10 +164,16 @@ public static void menu(PrintWriter out , BufferedReader in) throws IOException{
                      v.serchForCar(annual, Type,out);
                           break;
                  case  5 :
-               out.println("Exit...");
-                 default:
-               out.println("Choose on of the above options to start !");
-                break;
+                 out.println("what is the type of car :");
+               out.println("k");
+                String Type1=in.readLine();
+               out.println("Enter the plate number of the vehicle:");
+               out.println("k");
+                 int platnum= Integer.parseInt(in.readLine());
+                 v.DeleteVehicle(platnum,Type1);
+                 out.println("Vehicle Deleted");
+                    break;
+               
 
         }
 
