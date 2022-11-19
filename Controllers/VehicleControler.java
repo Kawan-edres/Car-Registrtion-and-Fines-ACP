@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
+import java.util.Collection;
 
+import Models.Truck;
 import Models.VehicleModule;
 import Views.VehicleView;
 
@@ -23,9 +25,11 @@ public class VehicleControler implements Serializable {
 
     public void addVhicle(PrintWriter out , BufferedReader in) throws IOException {
                                 
-        this.module.addVhicle(   this.view.addVhicle(out,in)   );
+        this.module.addVhicle(this.view.addVhicle(out,in));
 
     }
+
+
 
 
 
