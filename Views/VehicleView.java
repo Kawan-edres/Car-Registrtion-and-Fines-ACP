@@ -6,7 +6,6 @@ import java.io.PrintWriter;
 import java.io.Serializable;
 import java.util.Scanner;
 import java.util.Set;
-
 import Controllers.VehicleControler;
 import Models.PrivateCar;
 import Models.TransportCar;
