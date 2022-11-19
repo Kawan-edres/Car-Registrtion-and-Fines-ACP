@@ -3,51 +3,51 @@ package Views;
 import Admin.AdminAccount;
 import Controllers.FinesController;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.Scanner;
 
-public class AdminView {
+public class AdminView{
+    static void menu(PrintWriter out, BufferedReader in) throws ParseException, IOException {
+//        AdminAccount.Login();
 
-
-
-
-    static void menu() throws ParseException {
-        AdminAccount.Login();
-        Scanner scan = new Scanner(System.in);
-        char c;
+        String c;
         do {
-            System.out.println("Welcome Admin to the system   ");
-            System.out.println("------------------------------------");
-            System.out.println("Choose On bellow options to Login to the system  :");
-            System.out.println("1-Fines System");
-            System.out.println("2-Renew Annual System");
-            System.out.println("3-Register new Car System");
-            System.out.println("4-Exit");
-            c = scan.next().charAt(0);
+            out.println("Welcome Admin to the system   ");
+            out.println("------------------------------------");
+            out.println("Choose On bellow options to Login to the system  :");
+            out.println("1-Fines System");
+            out.println("2-Renew Annual System");
+            out.println("3-Register new Car System");
+            out.println("4-Exit");
+            out.println("k");
+            c = in.readLine();
 
 
             switch (c) {
-                case '1':
-                    System.out.println("Fines System");
-                    FinesView.menu();
+                case "1":
+                    out.println("Fines System");
+                    FinesView.menu(out,in);
                     break;
-                case '2':
-                    System.out.println("Renew Annuall System");
-                    RenewAnnualView.menu();
+                case "2":
+                    out.println("Renew Annuall System");
+                    RenewAnnualView.menu(out,in);
                     break;
-                case '3':
-                    System.out.println("New Car Registertion System");
+                case "3":
+                    out.println("New Car Registertion System");
 
                     break;
-                case '4':
-                    System.out.println("Exit...");
+                case "4":
+                    out.println("exit");
                 default:
-                    System.out.println("Choose on of the above options to start !");
+                    out.println("Choose on of the above options to start !");
                     break;
 
             }
 
-        } while (c != '4');
+        } while (c != "4");
 
 
     }
