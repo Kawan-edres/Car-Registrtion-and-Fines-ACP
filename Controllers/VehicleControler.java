@@ -96,6 +96,32 @@ public class VehicleControler implements Serializable {
 
     }
 
+    public void DeleteVehicle(int plateNumber, String Type){
+
+        if (Type.equals("truck")){
+    
+    
+            this.module.readTrukFromFile();
+            this.module.getT().stream().filter(p->p.getPlateNumber()==plateNumber).forEach(System.out::println);
+           this.module.addnewTruckToFile();
+         }
+            
+         else if (Type.equals("transport")){
+             this.module.readTransportFromFile();
+              this.module.getTrans().stream().filter(p->p.getPlateNumber()==plateNumber).forEach(System.out::println);
+              this.module.aaddnewTransportCarToFile();
+         }
+            
+    
+         else if(Type.equals("private")) {
+             this.module.readPrivateCarFromFile();
+              this.module.getCar().stream().filter(p->p.getPlateNumber()==plateNumber).forEach(System.out::println);
+              this.module.addnewPrivateCarToFile();
+         }
+    
+    
+       }
+
      
 
    
