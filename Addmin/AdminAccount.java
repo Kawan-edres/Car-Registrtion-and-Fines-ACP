@@ -16,27 +16,27 @@ public class AdminAccount {
     this.passwordd = password;
   }
 
-  public static void Login(PrintWriter out,BufferedReader in) throws IOException {
+  public static void Login(PrintWriter out, BufferedReader in)
+    throws IOException {
     out.println("enter your email :");
     out.println("k");
-    String emailInput =in.readLine();
+    String emailInput = in.readLine();
     out.println("enter your password :");
     out.println("k");
     String passwordInput = in.readLine();
     String validEmail = emailInput.trim().toLowerCase();
-  
+
     //check
-      while (true) {
-        if (validEmail.equals("admin@gmail.com")) {
-       
-          if (passwordInput.equals("12345")) {
-            break;
-          }
-        } else {
-          out.println("email or passwor is not correct try again");
-          Login(out,in);
+    while (true) {
+      if (validEmail.equals("admin@gmail.com")) {
+        if (passwordInput.equals("12345")) {
+          break;
         }
+      } else {
+        out.println("email or passwor is not correct try again");
+        Login(out, in);
       }
+    }
   }
 
   public String getEmail() {
@@ -68,5 +68,4 @@ public class AdminAccount {
       '}'
     );
   }
-  
 }
