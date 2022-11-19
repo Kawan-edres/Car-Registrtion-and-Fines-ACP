@@ -1,7 +1,6 @@
 package Controllers;
 
 
-
 import Models.RenewAnnualModel;
 
 import java.io.*;
@@ -15,26 +14,35 @@ public class RenewController {
     private static Set<RenewAnnualModel> renewAnnual = new HashSet<>();
 
 
+    public static void addRenewAnnualData(PrintWriter out, BufferedReader in) throws IOException {
 
-    public static void addRenewAnnualData() {
+        out.println("Enter CarPlate Number: ");
+        out.println("k");
+        int plateNumber = Integer.parseInt(in.readLine());
 
-        System.out.print("Enter CarPlate Number: ");
-        Integer plateNumber = scan.nextInt();
+        out.println("owner Full Name: ");
+        out.println("k");
+        String owenerFullName = in.readLine();
 
-        System.out.println("owner Full Name");
-        String owenerFullName = scan.next();
+        out.println("Owener Addrees ");
+        out.println("k");
+        String owenerAddress = in.readLine();
 
-        System.out.println("Owener Addrees ");
-        String owenerAddress = scan.next();
-        System.out.println("Car Model");
-        String carModel = scan.next();
-        System.out.print("Enter Car Type: ");
-        String vechicleType = scan.next();
+        out.println("Car Model");
+        out.println("k");
+        String carModel = in.readLine();
+
+        out.println("Enter Car Type: ");
+        out.println("k");
+        String vechicleType = in.readLine();
+
         boolean check = true;
         while (check) {
             if (!(vechicleType.equals("truck") || vechicleType.equals("private") || vechicleType.equals("transport"))) {
-                System.out.println("the type shuld be truck or private or transport");
-                vechicleType = scan.next();
+
+                out.println("the type shuld be truck or private or transport");
+                out.println("k");
+                vechicleType = in.readLine();
 
             } else {
                 check = false;
@@ -42,33 +50,42 @@ public class RenewController {
             }
 
         }
-        System.out.println("Enter VIN");
-        String VIN = scan.next();
+        out.println("Enter VIN");
+        out.println("k");
+        String VIN = in.readLine();
 
-        System.out.println("Car Color");
-        String carColor = scan.next();
+        out.println("Car Color");
+        out.println("k");
+        String carColor = in.readLine();
 
-        System.out.println("Annuall start Date ");
-        String annualStartDate = scan.next();
+        out.println("Annuall start Date ");
+        out.println("k");
+        String annualStartDate = in.readLine();
 
-        System.out.println("Annuall End Date ");
-        String annualEndDate = scan.next();
+        out.println("Annuall End Date ");
+        out.println("k");
+        String annualEndDate = in.readLine();
 
-        System.out.println("Vheicle SafetyE ndDate");
-        String vheicleSafetyEndDate = scan.next();
+        out.println("Vheicle SafetyE ndDate");
+        out.println("k");
+        String vheicleSafetyEndDate = in.readLine();
 
-        System.out.println("Environment Fines EndDate");
-        String environmentFinesEndDate = scan.next();
+        out.println("Environment Fines EndDate");
+        out.println("k");
+        String environmentFinesEndDate = in.readLine();
 
-        System.out.println("Chain Number ");
-        int vheicleChainNumber = scan.nextInt();
+        out.println("Chain Number ");
+        out.println("k");
+        int vheicleChainNumber = Integer.parseInt(in.readLine());
+
         readRenewAnnualFromFile();
         renewAnnual.add(new RenewAnnualModel(plateNumber, owenerFullName, owenerAddress, carModel, vechicleType, carColor, annualStartDate, annualEndDate, vheicleChainNumber, vheicleSafetyEndDate, environmentFinesEndDate, VIN));
         writeRenewAnnualToFile();
 
 
     }
-static void writeRenewAnnualToFile() {
+
+    static void writeRenewAnnualToFile() {
         try {
             ObjectOutputStream outData = new ObjectOutputStream(new FileOutputStream("renewAnnual.txt"));
             outData.writeObject(renewAnnual);
@@ -81,7 +98,8 @@ static void writeRenewAnnualToFile() {
         }
 
     }
-static void readRenewAnnualFromFile() {
+
+    static void readRenewAnnualFromFile() {
         try {
 
             ObjectInputStream in = new ObjectInputStream(new FileInputStream("renewAnnual.txt"));
@@ -94,21 +112,22 @@ static void readRenewAnnualFromFile() {
         }
 
     }
-    
-    public static  void  print(){
+
+
+    public static void print(PrintWriter out) {
         readRenewAnnualFromFile();
-        renewAnnual.stream().forEach(System.out::println);
+        renewAnnual.stream().forEach(p-> out.println(p));
     }
-    
-    public static  void delete(int plateNumber){
+
+    public static void delete(int plateNumber, String typeTodelete) {
         readRenewAnnualFromFile();
-        renewAnnual.removeIf(p->p.getVehiclePlateNumber() == plateNumber );
+        renewAnnual.removeIf(p -> p.getVehiclePlateNumber() == plateNumber && p.getCarType().equals(typeTodelete));
         writeRenewAnnualToFile();
     }
 
-public static void search(int plateNumber,String type){
+    public static void search(PrintWriter out ,int plateNumber, String type) {
         readRenewAnnualFromFile();
-        renewAnnual.stream().filter(p-> p.getVehiclePlateNumber()==plateNumber && p.getCarType().equals(type) ).forEach(p-> System.out.println(p));
+        renewAnnual.stream().filter(p -> p.getVehiclePlateNumber() == plateNumber && p.getCarType().equals(type)).forEach(p -> out.println(p));
 
     }
 
