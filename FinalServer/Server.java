@@ -10,7 +10,7 @@ import java.text.ParseException;
 
 
 public class Server extends Thread {
-    private Socket socket;
+    private Socket socket=null;
     BufferedReader input=null;
     PrintWriter output=null;
 
