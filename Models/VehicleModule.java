@@ -46,7 +46,7 @@ public class VehicleModule implements Serializable {
     
 
     // Truck
-    void addnewTruckToFile() {
+    public void addnewTruckToFile() {
         try {
             ObjectOutputStream outData = new ObjectOutputStream(new FileOutputStream("Truck.txt"));
             outData.writeObject(t);
@@ -61,7 +61,7 @@ public class VehicleModule implements Serializable {
     }
 
     //transport car
-     void aaddnewTransportCarToFile() {
+     public void aaddnewTransportCarToFile() {
         try {
             ObjectOutputStream outData = new ObjectOutputStream(new FileOutputStream("TransportCars.txt"));
             outData.writeObject(trans);
@@ -75,7 +75,7 @@ public class VehicleModule implements Serializable {
 
     }
     //private car 
-     void addnewPrivateCarToFile() {
+     public void addnewPrivateCarToFile() {
         try {
             ObjectOutputStream outData = new ObjectOutputStream(new FileOutputStream("PrivateCars.txt"));
             outData.writeObject(car);
