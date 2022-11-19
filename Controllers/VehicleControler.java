@@ -114,11 +114,12 @@ public void serchForCar(String annual, String Type, PrintWriter out ){
            this.module.addnewTruckToFile();
          }
             
-         else if (Type.equals("transport")){
+          else if (Type.equals("transport")){
              this.module.readTransportFromFile();
-              this.module.getTrans().stream().filter(p->p.getPlateNumber()==plateNumber).forEach(System.out::println);
+              ((Collection<Truck>) this.module.getTrans().stream()).removeIf(p->p.getPlateNumber()==plateNumber);
               this.module.aaddnewTransportCarToFile();
          }
+        ///////////////
             
     
          else if(Type.equals("private")) {
