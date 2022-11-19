@@ -43,7 +43,7 @@ public class VehicleView implements Serializable {
         String model = in.readLine();
        out.println("enter vhicle Year: ");
        out.println("k");
-        Integer year = scan.nextInt();
+        Integer year =  Integer.parseInt(in.readLine());
        out.println("enter annual Number:  ");
        out.println("k");
         String annualNo = in.readLine();
@@ -55,7 +55,7 @@ public class VehicleView implements Serializable {
         String owner = in.readLine();
        out.println("enter plate Number: ");
        out.println("k");
-        Integer plateNo = in.read();
+        Integer plateNo = Integer.parseInt(in.readLine());
 
 
 
@@ -79,13 +79,9 @@ public class VehicleView implements Serializable {
         } else if(type.equals("private")) {
          
            return (new PrivateCar(plateNo, model, year, annualNo, color, owner, plateNo, Vin));  // = rangrovar 
-          
-
+         
         }
-        return null;
-
-       
-
+        return null; 
     }
 
 
