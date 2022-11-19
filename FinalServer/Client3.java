@@ -21,3 +21,5 @@ try {
             System.out.println(e.getMessage());
             System.exit(1);
         }
+out = new PrintWriter(echoSocket.getOutputStream(), true);
+        in = new BufferedReader(new InputStreamReader(echoSocket.getInputStream()));//conection
