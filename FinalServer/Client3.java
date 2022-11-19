@@ -41,3 +41,9 @@ out = new PrintWriter(echoSocket.getOutputStream(), true);
                 break;
             }
         }
+         out.close();
+        in.close();
+        stdIn.close();
+        echoSocket.close();
+    }
+}
