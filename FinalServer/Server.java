@@ -11,8 +11,8 @@ import java.text.ParseException;
 public class Server extends Thread {
 
   private Socket socket = null;
-  BufferedReader input = null;
-  PrintWriter output = null;
+  private BufferedReader input = null;
+  private PrintWriter output = null;
 
   public Server(Socket socket) {
     this.socket = socket;
