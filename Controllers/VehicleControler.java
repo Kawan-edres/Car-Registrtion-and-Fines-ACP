@@ -107,10 +107,10 @@ public void serchForCar(String annual, String Type, PrintWriter out ){
     public void DeleteVehicle(int plateNumber, String Type){
 
         if (Type.equals("truck")){
-    
+    ////////////////
     
             this.module.readTrukFromFile();
-            this.module.getT().stream().filter(p->p.getPlateNumber()==plateNumber).forEach(System.out::println);
+            ((Collection<Truck>) this.module.getT().stream()).removeIf(p->p.getPlateNumber()==plateNumber);
            this.module.addnewTruckToFile();
          }
             
