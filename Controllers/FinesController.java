@@ -23,32 +23,40 @@ public class FinesController {
 
 
 
-    public static void addFinesData() throws ParseException {
-        System.out.print("Enter Car Type: ");
-        String type = scan.next();
+    public static void addFinesData(PrintWriter out, BufferedReader in) throws ParseException, IOException {
+        out.println("Enter Car Type: ");
+        out.println("k");
+        String type = in.readLine();
         boolean check = true;
         while (check) {
             if (!(type.equals("truck") || type.equals("private") || type.equals("transport"))) {
-                System.out.println("the type shuld be truck or private or transport");
-                type = scan.next();
+                out.println("the type shuld be truck or private or transport");
+                out.println("k");
+                type = in.readLine();
             } else {
                 check = false;
                 break;
             }
 
         }
-        System.out.print("Enter CarPlate Number: ");
-        Integer plateNumber = scan.nextInt();
-        System.out.print("Enter Annual Number :");
-        String annualNo = scan.next();
-        System.out.print("Enter typeOf Traffic Violation :");
-        String typeOfTrafficViolation = scan.next();
-        System.out.print("Amount of Traffic Violation :");
-        Double amountOfTrafficViolationMoney = scan.nextDouble();
-        System.out.print("total Number of Traffic Violation :");
-        Integer totalViolation = scan.nextInt();
-        System.out.print("Total Violation money :");
-        Double totalMoney = scan.nextDouble();
+        out.println("Enter CarPlate Number: ");
+        out.println("k");
+        Integer plateNumber = Integer.parseInt(in.readLine());
+        out.println("Enter Annual Number :");
+        out.println("k");
+        String annualNo = in.readLine();
+        out.println("Enter typeOf Traffic Violation :");
+        out.println("k");
+        String typeOfTrafficViolation = in.readLine();
+        out.println("Amount of Traffic Violation :");
+        out.println("k");
+        Double amountOfTrafficViolationMoney = Double.valueOf(in.readLine());
+        out.println("total Number of Traffic Violation :");
+        out.println("k");
+        Integer totalViolation = Integer.parseInt(in.readLine());
+        out.println("Total Violation money :");
+        out.println("k");
+        Double totalMoney = Double.valueOf(in.readLine());
 
         LocalDate dateObj = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
@@ -85,9 +93,9 @@ public class FinesController {
 
     }
 
-    public static void printFines() {
+    public static void printFines(PrintWriter out) {
         readFinesFromFile();
-        fines.stream().forEach(p -> System.out.println(p));
+        fines.stream().forEach(p -> out.println(p));
 
     }
 
@@ -97,9 +105,9 @@ public class FinesController {
         writeFinesToFile();
 
     }
-    public static  void search(int plateNumber,String type){
+    public static  void search(PrintWriter out,int plateNumber,String type){
         readFinesFromFile();
-        fines.stream().filter(p-> p.getCarPlateNumber()==plateNumber && p.getCarType().equals(type)).forEach(p-> System.out.println(p));
+        fines.stream().filter(p-> p.getCarPlateNumber()==plateNumber && p.getCarType().equals(type)).forEach(p-> out.println(p));
 
 
     }
