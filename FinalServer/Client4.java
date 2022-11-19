@@ -48,3 +48,10 @@ public class Client2 {
                 break;
             }
         }
+            out.close();
+        in.close();
+        stdIn.close();
+        echoSocket.close();
+    }
+}
+
