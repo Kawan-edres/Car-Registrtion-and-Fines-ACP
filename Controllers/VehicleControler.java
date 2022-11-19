@@ -62,6 +62,7 @@ public class VehicleControler implements Serializable {
 
     }
 
+
     public void displayAll(PrintWriter out){
         // truck 
         this.module.readTrukFromFile();
