@@ -175,21 +175,18 @@ public static void menu(PrintWriter out , BufferedReader in) throws IOException{
                     break;
                case 6:
                     out.println("Exit...");
-                   // System.exit(0);
-                   
+                 
                  default:
                out.println("Choose on of the above options to start !");
                 break;
 
         }
-        // out.close();
-        // in.close();
-
+        
     }while (c!='6');
 
-}
+ }
 
-        }
+}
 
    
 
