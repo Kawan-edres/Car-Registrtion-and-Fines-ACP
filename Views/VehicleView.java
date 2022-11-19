@@ -130,11 +130,12 @@ public static void menu(PrintWriter out , BufferedReader in) throws IOException{
        out.println("2-display car");
        out.println("3-Display All display all type of car ");
        out.println("4-Search for spesfic Car");
-       out.println("5-Exit");
+       out.println("5-Delete a Vehicle");
+       out.println("6- Exit");
        out.println("k");
-        c=in.read();
-
-
+        c= Integer.parseInt(in.readLine());
+       
+       
         switch (c){
             case 1 :
            v.addVhicle(out ,in);
