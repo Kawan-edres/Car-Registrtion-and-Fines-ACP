@@ -63,8 +63,8 @@ public class VehicleControler implements Serializable {
     }
 
 
-    public void displayAll(PrintWriter out){
-        // truck 
+   public void displayAll(PrintWriter out){
+        // truck || add truck to file
         this.module.readTrukFromFile();
 
              this.view.displayTruck(module.getT(),out);
@@ -76,6 +76,7 @@ public class VehicleControler implements Serializable {
              this.view.displayPrivateCar(module.getCar(), out);
         
     }
+
 
     public void serchForCar(String annual, String Type, PrintWriter out ){
 
