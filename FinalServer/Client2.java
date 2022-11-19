@@ -47,3 +47,10 @@ public static void main(String[] args) throws IOException {
                 break;
             }
         }
+
+        out.close();
+        in.close();
+        stdIn.close();
+        echoSocket.close();
+    }
+}
