@@ -89,26 +89,21 @@ public class VehicleView implements Serializable {
 
     public void displayTruck(Set<Truck> truck,PrintWriter out){
       
-        truck.stream().forEach(out::println);
+        truck.stream().forEach(p ->out.println(p));
 
     }
-
-
-
 
     public void displayTransport(Set<TransportCar> trans,PrintWriter out){
 
         
-        trans.stream().forEach(out::println);
+        trans.stream().forEach(p ->out.println(p));
     }
-
-
 
 
    public void displayPrivateCar(Set<PrivateCar> privateCar, PrintWriter out){
 
        
-       privateCar.stream().forEach(out::println);
+       privateCar.stream().forEach(p ->out.println(p));
 }
 
 
