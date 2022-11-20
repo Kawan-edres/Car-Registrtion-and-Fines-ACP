@@ -56,19 +56,19 @@ public class VehicleControler implements Serializable {
       this.module.readTrukFromFile();
       this.module.getT()
         .stream()
-        .filter(p -> p.getAnnualNumber().equals(annual))
+        .filter(p -> p.getAnnualNumber().equals(annual)).skip(1)
         .forEach(out::println);
     } else if (Type.equals("transport")) {
       this.module.readTransportFromFile();
       this.module.getTrans()
         .stream()
-        .filter(p -> p.getAnnualNumber().equals(annual))
+        .filter(p -> p.getAnnualNumber().equals(annual)).skip(1)
         .forEach(out::println);
     } else if (Type.equals("private")) {
       this.module.readPrivateCarFromFile();
       this.module.getCar()
         .stream()
-        .filter(p -> p.getAnnualNumber().equals(annual))
+        .filter(p -> p.getAnnualNumber().equals(annual)).skip(1)
         .forEach(out::println);
     }
   }
