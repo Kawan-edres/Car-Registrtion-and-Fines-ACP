@@ -9,6 +9,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+public class Client2 {
+
 public static void main(String[] args) throws IOException {
         Socket echoSocket = null;
         PrintWriter out = null;
