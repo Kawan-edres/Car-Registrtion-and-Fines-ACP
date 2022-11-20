@@ -85,7 +85,7 @@ public class RenewAnnualView {
               typeToSearch = in.readLine();
             } else {
               check2 = false;
-              break;
+              
             }
           }
 
