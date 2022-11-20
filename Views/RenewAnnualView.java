@@ -48,7 +48,7 @@ public class RenewAnnualView {
               typeTodelete = in.readLine();
             } else {
               check = false;
-              break;
+             
             }
           }
           out.println("Deleting a Annuals ");
