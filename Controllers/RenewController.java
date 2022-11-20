@@ -146,7 +146,7 @@ public class RenewController {
       .stream()
       .filter(p ->
         p.getVehiclePlateNumber() == plateNumber && p.getCarType().equals(type)
-      )
+      ).skip(1)
       .forEach(p -> out.println(p));
   }
 }
