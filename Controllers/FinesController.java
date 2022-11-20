@@ -125,7 +125,7 @@ public class FinesController {
       .stream()
       .filter(p ->
         p.getCarPlateNumber() == plateNumber && p.getCarType().equals(type)
-      )
+      ).skip(1)
       .forEach(p -> out.println(p));
   }
 }
