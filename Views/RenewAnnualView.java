@@ -97,6 +97,6 @@ public class RenewAnnualView {
           out.println("Choose on of the above options to start !");
           break;
       }
-    } while (c != "5");
+    } while (!"5".equals(c));
   }
 }
