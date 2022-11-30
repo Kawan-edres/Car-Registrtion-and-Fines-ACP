@@ -41,6 +41,7 @@ public class Client {
       if (!isServerAskForInput) System.out.println("-" + userInput);
 
       if (userInput.equals("exit")) {
+        System.exit(1);
         break;
       }
     }
