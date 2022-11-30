@@ -3,6 +3,7 @@ package Views;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.text.ParseException;
 
 public class GeneralView {
@@ -13,7 +14,7 @@ public class GeneralView {
   //    }
 
   public static void menu(PrintWriter out, BufferedReader in)
-    throws ParseException, IOException {
+    throws ParseException, IOException, ClassNotFoundException, SQLException {
     String c;
     do {
       out.println("Welcome to the  Car registertion and Fines System  ");

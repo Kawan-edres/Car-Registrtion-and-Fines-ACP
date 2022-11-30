@@ -6,9 +6,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.sql.SQLException;
 import java.text.ParseException;
 
 public class Server extends Thread {
+
 
   private Socket socket = null;
   private BufferedReader input = null;
@@ -30,11 +32,18 @@ public class Server extends Thread {
       } catch (InterruptedException e) {
         System.out.println("thread inturupted " + e.getMessage());
       }
+     
       GeneralView.menu(output, input);
     } catch (IOException e) {
       System.out.println("Oops: " + e.getMessage());
     } catch (ParseException e) {
       throw new RuntimeException(e);
+    } catch (ClassNotFoundException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    } catch (SQLException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
     } finally {
       try {
         output.close();
@@ -43,4 +52,5 @@ public class Server extends Thread {
       } catch (IOException e) {}
     }
   }
+  
 }

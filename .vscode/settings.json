@@ -1,0 +1,21 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "Sqlconnection",
+      "database": "car_registration_and_fines",
+      "username": "sqluser",
+      "password": "password"
+    }
+  ],
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar",
+    "c:\\Users\\bahez\\Downloads\\mysql-connector-java-8.0.30.jar"
+  ]
+}

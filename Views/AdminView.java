@@ -5,13 +5,14 @@ import Controllers.FinesController;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Scanner;
 
 public class AdminView {
 
   static void menu(PrintWriter out, BufferedReader in)
-    throws ParseException, IOException {
+    throws ParseException, IOException, ClassNotFoundException, SQLException {
     //        AdminAccount.Login();
 
     String c;

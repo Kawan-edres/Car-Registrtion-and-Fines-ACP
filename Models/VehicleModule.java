@@ -6,32 +6,55 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.HashSet;
 import java.util.Set;
 
 public class VehicleModule implements Serializable {
 
+   DataBaseConnection d= new DataBaseConnection();
+  
   private static Set<Truck> t = new HashSet<>();
   private static Set<TransportCar> trans = new HashSet<TransportCar>();
   private static Set<PrivateCar> car = new HashSet<PrivateCar>();
 
-  public void addVhicle(Vehicle v) { // v= ragrover
-    if (v.getVehicleType().equals("truck")) {
-      readTrukFromFile();
+  public int addVhicle(Vehicle v) throws SQLException, ClassNotFoundException { // v= ragrover
+    String SQL="INSERT INTO vehicle VALUES(?,?,?,?,?,?,?,?,?)";
 
-      t.add((Truck) v);
-      addnewTruckToFile();
-    } else if (v.getVehicleType().equals("transport")) {
-      readTransportFromFile();
-      trans.add((TransportCar) v);
+    Connection conn = DataBaseConnection.getDBConnection().getConnection();
 
-      aaddnewTransportCarToFile();
-    } else if (v.getVehicleType().equals("private")) {
-      readPrivateCarFromFile();
-      car.add((PrivateCar) v);
+    PreparedStatement stm = conn.prepareStatement(SQL);
 
-      addnewPrivateCarToFile();
-    }
+    stm.setObject(1, v.getVehicleId());
+    stm.setObject(2, v.getVehicleModelName());
+    stm.setObject(3, v.getVehicleYearModel());
+    stm.setObject(4, v.getAnnualNumber());
+    stm.setObject(5, v.getVehicleColor());
+    stm.setObject(6, v.getOwnerName());
+    stm.setObject(7, v.getPlateNumber());
+    stm.setObject(8, v.getVehicleType());
+    stm.setObject(9, v.getVin());
+
+     return stm.executeUpdate();
+
+    // if (v.getVehicleType().equals("truck")) {
+    //   readTrukFromFile();
+
+    //   t.add((Truck) v);
+    //   addnewTruckToFile();
+    // } else if (v.getVehicleType().equals("transport")) {
+    //   readTransportFromFile();
+    //   trans.add((TransportCar) v);
+
+    //   aaddnewTransportCarToFile();
+    // } else if (v.getVehicleType().equals("private")) {
+    //   readPrivateCarFromFile();
+    //   car.add((PrivateCar) v);
+
+    //   addnewPrivateCarToFile();
+    // }
   }
 
   // Truck

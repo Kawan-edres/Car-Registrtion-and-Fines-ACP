@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -116,7 +117,7 @@ public class VehicleView implements Serializable {
   }
 
   public static void menu(PrintWriter out, BufferedReader in)
-    throws IOException {
+    throws IOException, ClassNotFoundException, SQLException {
     VehicleControler v = new VehicleControler(
       new VehicleModule(),
       new VehicleView()

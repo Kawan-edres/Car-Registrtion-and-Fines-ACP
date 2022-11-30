@@ -4,6 +4,7 @@ import Controllers.RenewController;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class RenewAnnualView {
   static Scanner scan = new Scanner(System.in);
 
   static void menu(PrintWriter out, BufferedReader in)
-    throws ParseException, IOException {
+    throws ParseException, IOException, ClassNotFoundException, SQLException {
     String c;
     do {
       out.println("Welcome to the  Car Fines System ");

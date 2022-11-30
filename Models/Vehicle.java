@@ -26,6 +26,7 @@ public class Vehicle implements Serializable {
         this.Vin = vin;
     }
 
+    
 
     public String getVehicleModelName() {
         return vehicleModelName;
@@ -121,5 +122,11 @@ public class Vehicle implements Serializable {
                 ", vehicleType='" + vehicleType + '\'' +
                 ", Vin='" + Vin + '\'' +
                 '}';
+    }
+
+
+
+    public Integer getVehicleId() {
+        return vehicleId;
     }
 }
